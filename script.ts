@@ -15,4 +15,4 @@ class IncubyteAssignment {
 }
 
 const instance = new IncubyteAssignment();
-console.log('Add:', instance.add(''));
+console.log('Add:', instance.add('1,2,3'));
