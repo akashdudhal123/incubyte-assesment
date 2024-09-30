@@ -4,7 +4,13 @@ class IncubyteAssignment {
         if (!input) {
             return 0;
         }
-        return input;
+        const inputInArray = input.split(',');
+        const addition = inputInArray.reduce((result, input) => {
+            const x = +input;
+            result += x;
+            return result;
+        }, 0);
+        return addition;
     }
 }
 
