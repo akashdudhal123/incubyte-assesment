@@ -6,7 +6,7 @@ var IncubyteAssignment = /** @class */ (function () {
         if (!input) {
             return 0;
         }
-        var inputInArray = input.split(',');
+        var inputInArray = this._convertStringToNumbers(input);
         var addition = inputInArray.reduce(function (result, input) {
             var x = +input;
             result += x;
@@ -14,7 +14,11 @@ var IncubyteAssignment = /** @class */ (function () {
         }, 0);
         return addition;
     };
+    IncubyteAssignment.prototype._convertStringToNumbers = function (data) {
+        var replaceNewLine = data.replaceAll("\n", ",");
+        return replaceNewLine.split(',');
+    };
     return IncubyteAssignment;
 }());
 var instance = new IncubyteAssignment();
-console.log('Add:', instance.add('1,2,3,56,67,87'));
+console.log('Add:', instance.add('1,2,3,\n56,67\n87,\n5'));
